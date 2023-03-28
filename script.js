@@ -46,23 +46,56 @@ function convertToWord(letter) { // Create a function called convertToWord that 
 // Otherwise, if both selections match each other, return a DRAW message and play again
 
 
-function playRound(playerSelection, computerSelection) {
-    
-}
+function playRound() {
+    const playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase(); // Have the user input a choice between rock, paper, or scissors
+    const computerSelection = convertToWord(getComputerChoice()); // Converts the random choice chosen by the computer into a string 
 
-   
-    
+    switch (playerSelection + computerSelection) { // Evaluates the player's selection and the computer's selection
+        case "rockRock": // If the user's choice
+        case "paperPaper": // And the computer's choice
+        case "scissorsScissors": // Are the same
+            return("Draw"); // Return a DRAW message and replay
+            break; // Break out of the function
 
-const playerSelection = "rock";
-const computerSelection = convertToWord(getComputerChoice());
-console.log(playRound(playerSelection, computerSelection));
+        case "rockPaper": // If the player's choice
+        case "paperScissors": // Does not match
+        case "scissorsRock": // The computer's choice
+            return("Lose"); // Return a LOSE message, try again
+            break; 
+        case "rockScissors": // If the computer's choice
+        case "paperRock": // Does not match
+        case "scissorsPaper": // The player's choice
+            return("Win"); // You win!
+            break;
+    }
+};
+
+// console.log(playRound());
 
 
 // Write a new function called game; use the previous function inside of this function to play a 5round game that keeps score and reports a winner / loser at end
 
+function game() { // Create a function called game
+    if (playerScore === 5) { // If the player's score is strictly equal to 5 (number), 
+        console.log("Winner!"); // Return WIN message
+    } else if (compScore === 5) { // Else, if the computer's score is strictly equal to 5,
+        console.log("Loser! Try again?"); // Return LOSE message and ask the player to try again
+    }
 
+    const output = playRound(); // Declare a constant variable output with a value of the result gained by calling the playRound() function
+    if (output === "Win") { // If the output value is strictly equal to "Win" returned value
+        ++playerScore; // Increment the player's score by 1
+        console.log(`Win! User's score is now ${playerScore}!`); // Return a WIN message and display the player's current score
+    } else if (output === "Draw") { // Else, if the output value is strictly equal to the "Draw" returned value
+        console.log('Tie! No score change!'); // Return a DRAW message and no score change indicator
+    } else if (output === "Lose") { // Else, if the output is strictly equal to the "Lose" returned value
+        ++compScore; // Increment the computer's score by 1
+        console.log(`Lose! Computer's score is now ${compScore}!`); // Return a LOSE message and display the computer's current score
+    }
 
+};
 
+game(); // Calls the game() function
 
 
 
