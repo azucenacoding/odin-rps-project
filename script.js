@@ -21,9 +21,9 @@ let compScore = 0;
 
 
 function getComputerChoice() { // Have the computer choose a random value between rock, paper, and scissors
-        const choices = ['r', 'p', 's'];
-        const randomNumber = Math.floor(Math.random() * 3);
-        return choices[randomNumber];
+        const choices = ['r', 'p', 's']; // Declare a constant variable choices and assign it a value of an array with the values 'r', 'p', and 's'
+        const randomNumber = Math.floor(Math.random() * 3); // Declare a constant variable randomNumber and assign it a value of 
+        return choices[randomNumber]; // Return 
     }
 
 function convertToWord(letter) { // Create a function called convertToWord that takes a parameter 'letter'
@@ -76,6 +76,7 @@ function playRound() {
 // Write a new function called game; use the previous function inside of this function to play a 5round game that keeps score and reports a winner / loser at end
 
 function game() { // Create a function called game
+    
     if (playerScore === 5) { // If the player's score is strictly equal to 5 (number), 
         console.log("Winner!"); // Return WIN message
     } else if (compScore === 5) { // Else, if the computer's score is strictly equal to 5,
