@@ -10,20 +10,22 @@
 <body>
     <h1>Rock, Paper, Scissors, Shoot!</h1>
     <div class="selections">
-        <button class="rock">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
+        <button class="selection" data-selection="rock">✊</button>
+        <button class="selection" data-selection="paper">✋</button>
+        <button class="selection" data-selection="scissors">✌️</button>
     </div>
     
     <div class="results">
-        <div>Player Score
-            <span class="result-score">0</span>
+        <div>
+            Player Score
+            <span class="result-score" data-user-score>0</span>
         </div>
-        <div>Computer Score
-            <span class="result-score">0</span>
+        <div data-final-column>
+            Computer Score
+            <span class="result-score" data-comp-score>0</span>
         </div>
-    </div>
 
+    </div>
 
 
     <script src="script.js"></script>
